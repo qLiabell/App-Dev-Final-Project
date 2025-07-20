@@ -113,6 +113,7 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
   String _searchQuery = '';
 
   final List<Map<String, dynamic>> _cartItems = [];
+  final List<Map<String, dynamic>> _inventoryItems = [];
 
   final List<Map<String, dynamic>> _products = [
     {
@@ -120,23 +121,23 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
       'items': [
         {
           'name': 'N95 Mask (10 pcs)',
-          'price': 15.99,
+          'price': 299.00,
           'image': 'assets/mask.png',
         },
         {
           'name': 'Hand Sanitizer (500ml)',
-          'price': 8.49,
+          'price': 149.00,
           'image': 'assets/sanitizer.png',
         },
-        {'name': 'Face Shield', 'price': 5.99, 'image': 'assets/shield.png'},
+        {'name': 'Face Shield', 'price': 99.00, 'image': 'assets/shield.png'},
         {
           'name': 'Disposable Gloves (100 pcs)',
-          'price': 12.99,
+          'price': 249.00,
           'image': 'assets/gloves.png',
         },
         {
           'name': 'Thermometer',
-          'price': 19.99,
+          'price': 399.00,
           'image': 'assets/thermometer.png',
         },
       ],
@@ -146,27 +147,27 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
       'items': [
         {
           'name': 'Vitamin C 1000mg',
-          'price': 12.99,
+          'price': 249.00,
           'image': 'assets/vitamin_c.png',
         },
         {
           'name': 'Multivitamin Complex',
-          'price': 18.99,
+          'price': 349.00,
           'image': 'assets/multivitamin.png',
         },
         {
           'name': 'Vitamin D3 5000IU',
-          'price': 14.99,
+          'price': 299.00,
           'image': 'assets/vitamin_d.png',
         },
         {
           'name': 'Omega-3 Fish Oil',
-          'price': 22.99,
+          'price': 449.00,
           'image': 'assets/fish_oil.png',
         },
         {
           'name': 'Calcium + Magnesium',
-          'price': 16.99,
+          'price': 329.00,
           'image': 'assets/calcium.png',
         },
       ],
@@ -176,23 +177,23 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
       'items': [
         {
           'name': 'Ibuprofen 200mg',
-          'price': 7.99,
+          'price': 149.00,
           'image': 'assets/ibuprofen.png',
         },
         {
           'name': 'Acetaminophen 500mg',
-          'price': 5.99,
+          'price': 99.00,
           'image': 'assets/acetaminophen.png',
         },
-        {'name': 'Aspirin 81mg', 'price': 4.99, 'image': 'assets/aspirin.png'},
+        {'name': 'Aspirin 81mg', 'price': 89.00, 'image': 'assets/aspirin.png'},
         {
           'name': 'Naproxen Sodium',
-          'price': 9.99,
+          'price': 199.00,
           'image': 'assets/naproxen.png',
         },
         {
           'name': 'Migraine Relief',
-          'price': 12.99,
+          'price': 249.00,
           'image': 'assets/migraine.png',
         },
       ],
@@ -202,23 +203,23 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
       'items': [
         {
           'name': 'Antacid Tablets',
-          'price': 6.99,
+          'price': 129.00,
           'image': 'assets/antacid.png',
         },
         {
           'name': 'Probiotic Supplement',
-          'price': 24.99,
+          'price': 499.00,
           'image': 'assets/probiotic.png',
         },
-        {'name': 'Laxative', 'price': 8.99, 'image': 'assets/laxative.png'},
+        {'name': 'Laxative', 'price': 169.00, 'image': 'assets/laxative.png'},
         {
           'name': 'Anti-Diarrheal',
-          'price': 7.99,
+          'price': 149.00,
           'image': 'assets/antidiarrheal.png',
         },
         {
           'name': 'Digestive Enzymes',
-          'price': 19.99,
+          'price': 399.00,
           'image': 'assets/enzymes.png',
         },
       ],
@@ -228,23 +229,23 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
       'items': [
         {
           'name': 'Antibiotic Ointment',
-          'price': 5.99,
+          'price': 119.00,
           'image': 'assets/ointment.png',
         },
         {
           'name': 'Hydrocortisone Cream',
-          'price': 7.99,
+          'price': 149.00,
           'image': 'assets/hydrocortisone.png',
         },
         {
           'name': 'Antifungal Cream',
-          'price': 8.99,
+          'price': 179.00,
           'image': 'assets/antifungal.png',
         },
-        {'name': 'Acne Treatment', 'price': 11.99, 'image': 'assets/acne.png'},
+        {'name': 'Acne Treatment', 'price': 229.00, 'image': 'assets/acne.png'},
         {
           'name': 'Moisturizing Lotion',
-          'price': 9.99,
+          'price': 199.00,
           'image': 'assets/lotion.png',
         },
       ],
@@ -272,7 +273,7 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
     },
     {
       'title': 'Total Revenue',
-      'value': '\$1,245',
+      'value': '₱24,245',
       'icon': Icons.attach_money,
       'color': Colors.purple,
     },
@@ -290,25 +291,14 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
     },
   ];
 
-  final List<Map<String, dynamic>> _inventoryItems = [
-    {'name': 'N95 Mask', 'stock': 45, 'threshold': 20},
-    {'name': 'Paracetamol', 'stock': 32, 'threshold': 15},
-    {'name': 'Vitamin C', 'stock': 28, 'threshold': 10},
-    {'name': 'Hand Sanitizer', 'stock': 38, 'threshold': 15},
-    {'name': 'Ibuprofen', 'stock': 52, 'threshold': 20},
-    {'name': 'Omega-3 Fish Oil', 'stock': 18, 'threshold': 10},
-    {'name': 'Probiotic', 'stock': 22, 'threshold': 15},
-    {'name': 'Antacid', 'stock': 30, 'threshold': 20},
-  ];
-
   final List<Map<String, dynamic>> _salesData = [
-    {'day': 'Mon', 'sales': 120},
-    {'day': 'Tue', 'sales': 200},
-    {'day': 'Wed', 'sales': 150},
-    {'day': 'Thu', 'sales': 180},
-    {'day': 'Fri', 'sales': 220},
-    {'day': 'Sat', 'sales': 250},
-    {'day': 'Sun', 'sales': 190},
+    {'day': 'Mon', 'sales': 1200},
+    {'day': 'Tue', 'sales': 2000},
+    {'day': 'Wed', 'sales': 1500},
+    {'day': 'Thu', 'sales': 1800},
+    {'day': 'Fri', 'sales': 2200},
+    {'day': 'Sat', 'sales': 2500},
+    {'day': 'Sun', 'sales': 1900},
   ];
 
   final List<Map<String, dynamic>> _topProducts = [
@@ -319,10 +309,103 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
     {'name': 'Probiotic', 'sales': 25, 'image': 'assets/probiotic.png'},
   ];
 
+  final List<Map<String, dynamic>> _orderHistory = [
+    {
+      'orderId': 'ORD-1001',
+      'date': 'May 15, 2023',
+      'status': 'Completed',
+      'amount': 859.00,
+      'items': [
+        {'name': 'N95 Mask (10 pcs)', 'qty': 2, 'price': 299.00},
+        {'name': 'Hand Sanitizer', 'qty': 1, 'price': 149.00},
+      ],
+    },
+    {
+      'orderId': 'ORD-1002',
+      'date': 'May 10, 2023',
+      'status': 'Completed',
+      'amount': 547.00,
+      'items': [
+        {'name': 'Vitamin C 1000mg', 'qty': 1, 'price': 249.00},
+        {'name': 'Aspirin 81mg', 'qty': 2, 'price': 89.00},
+      ],
+    },
+    {
+      'orderId': 'ORD-1003',
+      'date': 'May 5, 2023',
+      'status': 'Completed',
+      'amount': 1297.00,
+      'items': [
+        {'name': 'Omega-3 Fish Oil', 'qty': 1, 'price': 449.00},
+        {'name': 'Multivitamin Complex', 'qty': 1, 'price': 349.00},
+        {'name': 'Thermometer', 'qty': 1, 'price': 399.00},
+      ],
+    },
+  ];
+
   @override
   void initState() {
     super.initState();
     _updateCartCount();
+
+    _inventoryItems.addAll([
+      {
+        'name': 'N95 Mask',
+        'stock': 45,
+        'threshold': 20,
+        'price': 299.00,
+        'category': 'Covid Essentials',
+      },
+      {
+        'name': 'Paracetamol',
+        'stock': 32,
+        'threshold': 15,
+        'price': 99.00,
+        'category': 'Pain Relief',
+      },
+      {
+        'name': 'Vitamin C',
+        'stock': 28,
+        'threshold': 10,
+        'price': 249.00,
+        'category': 'Vitamins & Supplements',
+      },
+      {
+        'name': 'Hand Sanitizer',
+        'stock': 38,
+        'threshold': 15,
+        'price': 149.00,
+        'category': 'Covid Essentials',
+      },
+      {
+        'name': 'Ibuprofen',
+        'stock': 52,
+        'threshold': 20,
+        'price': 149.00,
+        'category': 'Pain Relief',
+      },
+      {
+        'name': 'Omega-3 Fish Oil',
+        'stock': 18,
+        'threshold': 10,
+        'price': 449.00,
+        'category': 'Vitamins & Supplements',
+      },
+      {
+        'name': 'Probiotic',
+        'stock': 22,
+        'threshold': 15,
+        'price': 499.00,
+        'category': 'Digestive Health',
+      },
+      {
+        'name': 'Antacid',
+        'stock': 30,
+        'threshold': 20,
+        'price': 129.00,
+        'category': 'Digestive Health',
+      },
+    ]);
   }
 
   void _updateCartCount() {
@@ -389,7 +472,9 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
                                 height: 40,
                               ),
                               title: Text(item['name']),
-                              subtitle: Text('\$${item['price']}'),
+                              subtitle: Text(
+                                '₱${item['price'].toStringAsFixed(2)}',
+                              ),
                               trailing: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -440,7 +525,7 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
               ),
               actions: [
                 Text(
-                  'Total: \$${total.toStringAsFixed(2)}',
+                  'Total: ₱${total.toStringAsFixed(2)}',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -488,6 +573,261 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
           },
         );
       },
+    );
+  }
+
+  void _showOrderHistory(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          height: MediaQuery.of(context).size.height * 0.8,
+          child: Column(
+            children: [
+              const Text(
+                'Order History',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: _orderHistory.length,
+                  itemBuilder: (context, index) {
+                    final order = _orderHistory[index];
+                    return Card(
+                      margin: const EdgeInsets.only(bottom: 10),
+                      child: ExpansionTile(
+                        title: Text('Order #${order['orderId']}'),
+                        subtitle: Text(
+                          '${order['date']} - ₱${order['amount']}',
+                          style: TextStyle(
+                            color: order['status'] == 'Completed'
+                                ? Colors.green
+                                : Colors.orange,
+                          ),
+                        ),
+                        children: [
+                          ...order['items'].map<Widget>((item) {
+                            return ListTile(
+                              title: Text(item['name']),
+                              subtitle: Text('Qty: ${item['qty']}'),
+                              trailing: Text('₱${item['price']}'),
+                            );
+                          }),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Status: ${order['status']}',
+                                  style: TextStyle(
+                                    color: order['status'] == 'Completed'
+                                        ? Colors.green
+                                        : Colors.orange,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  'Total: ₱${order['amount']}',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Close'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showSettings(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          height: MediaQuery.of(context).size.height * 0.6,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Settings',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Notification Settings',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SwitchListTile(
+                title: const Text('Order Updates'),
+                value: true,
+                onChanged: (value) {},
+              ),
+              SwitchListTile(
+                title: const Text('Promotions'),
+                value: false,
+                onChanged: (value) {},
+              ),
+              const Divider(),
+              const Text(
+                'Account Settings',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              ListTile(
+                title: const Text('Change Password'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Password change requested')),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Update Email'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Email update requested')),
+                  );
+                },
+              ),
+              const Divider(),
+              const Text(
+                'App Settings',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SwitchListTile(
+                title: const Text('Dark Mode'),
+                value: false,
+                onChanged: (value) {},
+              ),
+              const Spacer(),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Close Settings'),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showHelpAndSupport(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          height: MediaQuery.of(context).size.height * 0.7,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Help & Support',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Frequently Asked Questions',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: ListView(
+                  children: [
+                    _buildFAQItem(
+                      'How do I place an order?',
+                      'Browse products, add to cart, and proceed to checkout. You can pay via various payment methods.',
+                    ),
+                    _buildFAQItem(
+                      'What is your return policy?',
+                      'You can return unused, unopened items within 30 days of purchase with original receipt.',
+                    ),
+                    _buildFAQItem(
+                      'How long does delivery take?',
+                      'Standard delivery takes 3-5 business days. Express delivery available for select areas.',
+                    ),
+                    _buildFAQItem(
+                      'Do you accept prescriptions?',
+                      'Yes, you can upload your prescription during checkout or contact our support team.',
+                    ),
+                    _buildFAQItem(
+                      'How do I track my order?',
+                      'You will receive a tracking number via email once your order is shipped.',
+                    ),
+                  ],
+                ),
+              ),
+              const Divider(),
+              const Text(
+                'Contact Us',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              ListTile(
+                leading: const Icon(Icons.email),
+                title: const Text('Email Us'),
+                subtitle: const Text('support@blessingpharma.com'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.phone),
+                title: const Text('Call Us'),
+                subtitle: const Text('09954295432'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.chat),
+                title: const Text('Live Chat'),
+                subtitle: const Text('Available 9AM-5PM, Mon-Fri'),
+                onTap: () {},
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Close'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildFAQItem(String question, String answer) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: ExpansionTile(
+        title: Text(
+          question,
+          style: const TextStyle(fontWeight: FontWeight.w500),
+        ),
+        children: [
+          Padding(padding: const EdgeInsets.all(16.0), child: Text(answer)),
+        ],
+      ),
     );
   }
 
@@ -540,62 +880,62 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
                 {
                   'name': 'N95 Mask',
                   'image': 'assets/mask.png',
-                  'price': 15.99,
+                  'price': 299.00,
                 },
                 {
                   'name': 'Acne Cream',
                   'image': 'assets/acne.png',
-                  'price': 11.99,
+                  'price': 229.00,
                 },
                 {
                   'name': 'Antacid',
                   'image': 'assets/antacid.png',
-                  'price': 8.99,
+                  'price': 129.00,
                 },
                 {
                   'name': 'Aspirin',
                   'image': 'assets/aspirin.png',
-                  'price': 4.99,
+                  'price': 89.00,
                 },
                 {
                   'name': 'Calcium',
                   'image': 'assets/calcium.png',
-                  'price': 16.99,
+                  'price': 329.00,
                 },
                 {
                   'name': 'Enzymes',
                   'image': 'assets/enzymes.png',
-                  'price': 19.99,
+                  'price': 399.00,
                 },
                 {
                   'name': 'Lotion',
                   'image': 'assets/lotion.png',
-                  'price': 15.99,
+                  'price': 199.00,
                 },
                 {
                   'name': 'Sanitizer',
                   'image': 'assets/sanitizer.png',
-                  'price': 8.49,
+                  'price': 149.00,
                 },
                 {
                   'name': 'Vitamin C',
                   'image': 'assets/vitamin_c.png',
-                  'price': 12.99,
+                  'price': 249.00,
                 },
                 {
                   'name': 'Multivitamin',
                   'image': 'assets/multivitamin.png',
-                  'price': 18.99,
+                  'price': 349.00,
                 },
                 {
                   'name': 'Pain Relief',
                   'image': 'assets/ibuprofen.png',
-                  'price': 7.99,
+                  'price': 149.00,
                 },
                 {
                   'name': 'Antacid',
                   'image': 'assets/antacid.png',
-                  'price': 6.99,
+                  'price': 129.00,
                 },
               ];
 
@@ -662,7 +1002,7 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
                           height: 50,
                         ),
                         title: Text(item['name']),
-                        subtitle: Text('\$${item['price']}'),
+                        subtitle: Text('₱${item['price'].toStringAsFixed(2)}'),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -737,21 +1077,27 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
                   leading: const Icon(Icons.history, color: Colors.blue),
                   title: const Text('Order History'),
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () {},
+                  onTap: () {
+                    _showOrderHistory(context);
+                  },
                 ),
                 const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.settings, color: Colors.grey),
                   title: const Text('Settings'),
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () {},
+                  onTap: () {
+                    _showSettings(context);
+                  },
                 ),
                 const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.help_outline, color: Colors.orange),
                   title: const Text('Help & Support'),
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () {},
+                  onTap: () {
+                    _showHelpAndSupport(context);
+                  },
                 ),
                 const Divider(height: 1),
                 ListTile(
@@ -783,6 +1129,25 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Dashboard',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              ElevatedButton.icon(
+                onPressed: _showAddInventoryItemDialog,
+                icon: const Icon(Icons.add),
+                label: const Text('Add Product'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
           const Text(
             'Sales Overview',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -795,16 +1160,25 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
               itemCount: _salesData.length,
               itemBuilder: (context, index) {
                 final data = _salesData[index];
+                final maxSales = _salesData.fold<double>(
+                  0,
+                  (max, item) =>
+                      item['sales'] > max ? item['sales'].toDouble() : max,
+                );
+                final barHeight = (data['sales'] / maxSales) * 150;
                 return Container(
                   width: 60,
                   margin: const EdgeInsets.only(right: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text('\$${data['sales']}'),
+                      Text(
+                        '₱${data['sales']}',
+                        style: const TextStyle(fontSize: 12),
+                      ),
                       const SizedBox(height: 5),
                       Container(
-                        height: data['sales'] / 2,
+                        height: barHeight > 0 ? barHeight : 1,
                         width: 30,
                         decoration: BoxDecoration(
                           color: Colors.green,
@@ -812,11 +1186,77 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
                         ),
                       ),
                       const SizedBox(height: 5),
-                      Text(data['day']),
+                      Text(
+                        data['day'],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 );
               },
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            'Inventory Management',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Product Inventory',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Total: ${_inventoryItems.length} items',
+                        style: const TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  ..._inventoryItems.map((item) {
+                    return Column(
+                      children: [
+                        ListTile(
+                          title: Text(item['name']),
+                          subtitle: Text(item['category']),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                '${item['stock']}',
+                                style: TextStyle(
+                                  color: item['stock'] < item['threshold']
+                                      ? Colors.red
+                                      : Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const Text(' in stock'),
+                              IconButton(
+                                icon: const Icon(Icons.edit, size: 20),
+                                onPressed: () =>
+                                    _showEditInventoryItemDialog(item),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Divider(height: 1),
+                      ],
+                    );
+                  }),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -868,28 +1308,6 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
             ),
           ),
           const SizedBox(height: 20),
-          const Text(
-            'Inventory Status',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 10),
-          ..._inventoryItems.map((item) {
-            return Card(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: ListTile(
-                title: Text(item['name']),
-                subtitle: LinearProgressIndicator(
-                  value: item['stock'] / (item['threshold'] * 2),
-                  backgroundColor: Colors.grey[200],
-                  color: item['stock'] > item['threshold']
-                      ? Colors.green
-                      : Colors.red,
-                ),
-                trailing: Text('${item['stock']} in stock'),
-              ),
-            );
-          }),
-          const SizedBox(height: 20),
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -938,15 +1356,15 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
               padding: const EdgeInsets.all(12),
               child: Column(
                 children: [
-                  _buildRecentOrderItem('ORD-001', 'Completed', '\$45.99'),
+                  _buildRecentOrderItem('ORD-001', 'Completed', '₱859.00'),
                   const Divider(),
-                  _buildRecentOrderItem('ORD-002', 'Processing', '\$32.50'),
+                  _buildRecentOrderItem('ORD-002', 'Processing', '₱547.00'),
                   const Divider(),
-                  _buildRecentOrderItem('ORD-003', 'Completed', '\$28.75'),
+                  _buildRecentOrderItem('ORD-003', 'Completed', '₱1,297.00'),
                   const Divider(),
-                  _buildRecentOrderItem('ORD-004', 'Shipped', '\$67.20'),
+                  _buildRecentOrderItem('ORD-004', 'Shipped', '₱499.00'),
                   const Divider(),
-                  _buildRecentOrderItem('ORD-005', 'Pending', '\$19.99'),
+                  _buildRecentOrderItem('ORD-005', 'Pending', '₱349.00'),
                 ],
               ),
             ),
@@ -970,6 +1388,214 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
           ),
         ],
       ),
+    );
+  }
+
+  void _showAddInventoryItemDialog() {
+    final nameController = TextEditingController();
+    final categoryController = TextEditingController();
+    final stockController = TextEditingController();
+    final thresholdController = TextEditingController();
+    final priceController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Add New Inventory Item'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  controller: nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Product Name',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: categoryController,
+                  decoration: const InputDecoration(
+                    labelText: 'Category',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: stockController,
+                  decoration: const InputDecoration(
+                    labelText: 'Current Stock',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: thresholdController,
+                  decoration: const InputDecoration(
+                    labelText: 'Low Stock Threshold',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: priceController,
+                  decoration: const InputDecoration(
+                    labelText: 'Price',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (nameController.text.isNotEmpty &&
+                    categoryController.text.isNotEmpty &&
+                    stockController.text.isNotEmpty &&
+                    thresholdController.text.isNotEmpty &&
+                    priceController.text.isNotEmpty) {
+                  setState(() {
+                    _inventoryItems.add({
+                      'name': nameController.text,
+                      'category': categoryController.text,
+                      'stock': int.parse(stockController.text),
+                      'threshold': int.parse(thresholdController.text),
+                      'price': double.parse(priceController.text),
+                    });
+                  });
+                  Navigator.pop(context);
+                }
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              child: const Text('Add', style: TextStyle(color: Colors.white)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showEditInventoryItemDialog(Map<String, dynamic> item) {
+    final nameController = TextEditingController(text: item['name']);
+    final categoryController = TextEditingController(text: item['category']);
+    final stockController = TextEditingController(
+      text: item['stock'].toString(),
+    );
+    final thresholdController = TextEditingController(
+      text: item['threshold'].toString(),
+    );
+    final priceController = TextEditingController(
+      text: item['price'].toString(),
+    );
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Edit Inventory Item'),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextField(
+                  controller: nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Product Name',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: categoryController,
+                  decoration: const InputDecoration(
+                    labelText: 'Category',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: stockController,
+                  decoration: const InputDecoration(
+                    labelText: 'Current Stock',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: thresholdController,
+                  decoration: const InputDecoration(
+                    labelText: 'Low Stock Threshold',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  controller: priceController,
+                  decoration: const InputDecoration(
+                    labelText: 'Price',
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (nameController.text.isNotEmpty &&
+                    categoryController.text.isNotEmpty &&
+                    stockController.text.isNotEmpty &&
+                    thresholdController.text.isNotEmpty &&
+                    priceController.text.isNotEmpty) {
+                  setState(() {
+                    final index = _inventoryItems.indexWhere(
+                      (i) => i['name'] == item['name'],
+                    );
+                    if (index != -1) {
+                      _inventoryItems[index] = {
+                        'name': nameController.text,
+                        'category': categoryController.text,
+                        'stock': int.parse(stockController.text),
+                        'threshold': int.parse(thresholdController.text),
+                        'price': double.parse(priceController.text),
+                      };
+                    }
+                  });
+                  Navigator.pop(context);
+                }
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              child: const Text('Save', style: TextStyle(color: Colors.white)),
+            ),
+            IconButton(
+              icon: const Icon(Icons.delete, color: Colors.red),
+              onPressed: () {
+                setState(() {
+                  _inventoryItems.removeWhere((i) => i['name'] == item['name']);
+                });
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -1151,7 +1777,7 @@ class _OnlinePharmacyState extends State<OnlinePharmacy> {
               ),
               const SizedBox(height: 5),
               Text(
-                '\$$price',
+                '₱${price.toStringAsFixed(2)}',
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.green,
