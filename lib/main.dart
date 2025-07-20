@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:final_project_app_dev/screens/online_pharmacy.dart';
+import 'package:finalproj/screens/online_pharmacy.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 40),
+
               Container(
                 height: 100,
                 width: 100,
@@ -91,8 +92,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 20),
+
               const Text(
-                'Blessing Pharma',
+                'Blessing Pharma and Medical Supplies',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -192,6 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 20),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -206,6 +209,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(height: 40),
+
               const Row(
                 children: [
                   Expanded(child: Divider()),
@@ -217,6 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(height: 20),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
